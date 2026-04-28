@@ -1,6 +1,6 @@
 import re
 
-with open('Portfolio.html', 'r', encoding='utf8') as f:
+with open('index.html', 'r', encoding='utf8') as f:
     html = f.read()
 
 para_match = re.search(r'(<p class=\\"body-text\\" style=\\"max-width: none;\\"><span class=\\"i18n-en\\">Duolingo\'s leaderboard places users in competitive tiers against strangers\..*?<\\u002Fp>)', html, re.DOTALL)
@@ -14,11 +14,10 @@ if para_match:
     updated = html.replace(found_para, new_text)
     
     if html != updated:
-        with open('Portfolio.html', 'w', encoding='utf8') as f:
+        with open('index.html', 'w', encoding='utf8') as f:
             f.write(updated)
         print("Updated successfully!")
     else:
         print("Replacement did not change anything.")
 else:
     print("Paragraph not found.")
-

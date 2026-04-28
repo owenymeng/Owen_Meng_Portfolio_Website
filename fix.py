@@ -1,6 +1,6 @@
 import re
 
-with open('Portfolio.html', 'r', encoding='utf8') as f:
+with open('index.html', 'r', encoding='utf8') as f:
     html = f.read()
 
 match = re.search(r'Mismatch 02.*?<\\u002Fdiv>', html, re.DOTALL)
@@ -19,7 +19,7 @@ if match:
     
     if new_text != found_text:
         updated = html.replace(found_text, new_text)
-        with open('Portfolio.html', 'w', encoding='utf8') as f:
+        with open('index.html', 'w', encoding='utf8') as f:
             f.write(updated)
         print("Updated successfully!")
     else:

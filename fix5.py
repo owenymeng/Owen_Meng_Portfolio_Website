@@ -1,6 +1,6 @@
 import re
 
-with open('Portfolio.html', 'r', encoding='utf8') as f:
+with open('index.html', 'r', encoding='utf8') as f:
     html = f.read()
 
 # Find and replace the added image div for 5-2-new2.jpg
@@ -9,7 +9,7 @@ pattern = r'\\n\\n\s*<div style=\\"margin: 2.5rem 0; border-radius: 12px; overfl
 updated = re.sub(pattern, '', html)
 
 if html != updated:
-    with open('Portfolio.html', 'w', encoding='utf8') as f:
+    with open('index.html', 'w', encoding='utf8') as f:
         f.write(updated)
     print("Deleted successfully!")
 else:

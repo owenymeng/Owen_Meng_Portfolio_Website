@@ -1,6 +1,6 @@
 import re
 
-with open('Portfolio.html', 'r', encoding='utf8') as f:
+with open('index.html', 'r', encoding='utf8') as f:
     html = f.read()
 
 # Let's find 5-2.jpg to see how it was styled
@@ -15,4 +15,3 @@ match_para = re.search(r'.{0,150}' + re.escape(para_text) + r'.{0,300}', html, r
 if match_para:
     print("\nFound paragraph:")
     print(repr(match_para.group(0)))
-
